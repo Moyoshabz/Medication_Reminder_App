@@ -18,6 +18,32 @@ medications = ['Metformin', 'Lisinopril', 'Aspirin', 'Atorvastatin', 'Amoxicilli
 dosages = ['500mg', '10mg', '20mg', '100mg', '250mg', '5mg', '75mg', '40mg']
 times = ['08:00', '12:00', '14:00', '18:00', '20:00']
 
+schedule = []
+start_date = datetime.today()
+
+for day in range(30):
+    date = (start_date + timedelta(days=day)).strftime('%Y-%m-%d')
+    num_meds = random.randint(1, 3)
+
+    for _ in range(num_meds):
+        med = random.choice(medications)
+        dose = random.choice(dosages)
+        time = random.choice(times)
+
+        schedule.append({
+            'Date': date,
+            'Medication': med,
+            'Dosage': dose,
+            'Time': time
+        })
+
+df_schedule = pd.DataFrame(schedule)
+df_schedule.to_csv('meds_schedule_30days.csv', index=False)
+print("CSV file 'meds_schedule_30days.csv' created!")
+
+from google.colab import files
+files.download('meds_schedule_30days.csv')
+
 st.set_page_config(page_title="Medication Agent", layout="wide")
 st.title("💊 Personalized Medication Reminder Agent")
 st.markdown("Built with synthetic 30-day schedule. Future versions will include FDA data integration.")
