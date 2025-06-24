@@ -41,6 +41,8 @@ df_schedule = pd.DataFrame(schedule)
 df_schedule.to_csv('meds_schedule_30days.csv', index=False)
 print("CSV file 'meds_schedule_30days.csv' created!")
 
+df = pd.read_csv('meds_schedule_30days.csv')
+
 st.set_page_config(page_title="Medication Agent", layout="wide")
 st.title("💊 Personalized Medication Reminder Agent")
 st.markdown("Built with synthetic 30-day schedule. Future versions will include FDA data integration.")
@@ -54,6 +56,7 @@ st.dataframe(filtered_df)
 if selected_date == datetime.today().strftime('%Y-%m-%d'):
     now = datetime.now().strftime('%H:%M')
     due_now = filtered_df[filtered_df['Time'] == now]
+    st.markdown("## ⏰ Medications Due Now")
     if not due_now.empty:
         for _, row in due_now.iterrows():
             st.success(f"🔔 Take {row['Medication']} ({row['Dosage']}) at {row['Time']}")
