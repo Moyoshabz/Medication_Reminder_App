@@ -41,9 +41,6 @@ df_schedule = pd.DataFrame(schedule)
 df_schedule.to_csv('meds_schedule_30days.csv', index=False)
 print("CSV file 'meds_schedule_30days.csv' created!")
 
-from google.colab import files
-files.download('meds_schedule_30days.csv')
-
 st.set_page_config(page_title="Medication Agent", layout="wide")
 st.title("💊 Personalized Medication Reminder Agent")
 st.markdown("Built with synthetic 30-day schedule. Future versions will include FDA data integration.")
