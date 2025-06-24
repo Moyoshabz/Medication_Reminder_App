@@ -2,7 +2,7 @@
 ## Live Demo
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://medicationreminderapp-h2gga62porvbqxeogtyv2e.streamlit.app/)
 
-This is a simple agentic app that helps patient especially seniors, manage their medications by providing:
+This agentic app manages seniors medications by providing:
 
 - Time-based reminders
 - Drug interaction warnings
