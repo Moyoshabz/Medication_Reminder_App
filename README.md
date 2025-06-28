@@ -12,6 +12,7 @@ This agentic app manages seniors medications by providing:
 ## Features
 
 - View medication schedules for any date (past, present, future)
+- Get alert if it's time to take a medication(if viewing today's date)
 - Basic interaction check between medications (e.g., Lisinopril + Aspirin)
 - Line chart showing number of medications per day
 
